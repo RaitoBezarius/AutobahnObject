@@ -1,0 +1,19 @@
+controller: {}
+workers:
+- components:
+  - {classname: src.object.ObjectService, id: object_api, realm: realm1, role: anonymous, type: class}
+  options:
+    pythonpath: [..]
+  realms:
+  - name: realm1
+    roles:
+    - name: anonymous
+      permissions:
+      - {call: true, publish: true, register: true, subscribe: true, uri: '*'}
+  transports:
+  - endpoint: {port: 8080, type: tcp}
+    paths:
+      /: {directory: .., type: static}
+      ws: {type: websocket}
+    type: web
+  type: router

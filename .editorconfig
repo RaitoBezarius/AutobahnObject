@@ -1,0 +1,9 @@
+root = True
+
+[*.py]
+indent_size = 4
+indent_style = spaces
+
+[*.yaml]
+indent_size = 2
+indent_style = spaces
